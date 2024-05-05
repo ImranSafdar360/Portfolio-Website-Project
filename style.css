@@ -1,0 +1,549 @@
+@font-face {
+  font-family: gilroyMedium;
+  src: url(/Fonts/Gilroy-Medium.e7e7c091.ttf);
+}
+@font-face {
+  font-family: gilroySemi;
+  src: url(/Fonts/Gilroy-SemiBold.f3ed44cd.ttf);
+}
+@font-face {
+  font-family: Mazius;
+  src: url(/Fonts/Mazius-Extraitalic.121a71a7.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#main{
+  position: relative;
+}
+#loader {
+  width: 100%;
+  height: 100vh;
+  background-color: #1b1b1b;
+  position:fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  overflow: hidden;
+  z-index: 99;
+  /* display: none; */
+}
+#top-text {
+  overflow-y: hidden;
+}
+#top-text .reveal {
+  text-align: center;
+  color: #fff;
+  font-family: gilroyMedium;
+  font-weight: 500;
+  font-size: 1vw;
+  text-transform: uppercase;
+}
+
+#center-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-y: hidden;
+}
+#center-text .reveal {
+  font-family: gilroyMedium;
+  font-size: 6vw;
+  color: #fff;
+  display: inline-block;
+  margin-right: 10px;
+}
+#center-text .reveal #style {
+  font-family: Mazius;
+  color: #14cf93;
+}
+#animation {
+  overflow: hidden;
+}
+#circle {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #dddddd;
+  border-top-color: #009578;
+  border-radius: 50%;
+  animation: loading 1.5s ease infinite;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+#green {
+  width: 100%;
+  height: 100%;
+  background-color: #14cf93;
+  position: absolute;
+  bottom: 0;
+  z-index: 7;
+  /* display: none; */
+}
+#home{
+    width: 100%;
+    height: 100vh;
+    background-color: #FCFAF8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#home #nav{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    position: absolute;
+    top: 0%;
+    z-index: 5;
+
+}
+#nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: gilroyMedium;
+    font-size: 0.9vw;
+    position: relative;
+    color: #232323;
+}
+#nav a .line{
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+}
+#nav a #line1{
+    width: 0;
+    left: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    transition-delay: .1s;
+}
+#nav a #line2{
+    width: 100%;
+    right: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+#nav a:hover #line2{
+    width: 0;
+}
+#nav a:hover #line1{
+    width: 100%;
+}
+.row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: gilroyMedium;
+    color: #000;
+    padding: 0px 50px;
+    opacity: 0.75;
+    overflow: hidden;
+}
+.row h1{
+    font-size: 13vw;
+    font-weight: 400;
+    display: inline-block;
+}
+
+#home #right-text{
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top:30%;
+    right: 0%;
+    font-family: gilroyMedium;
+
+}
+#right-text .text h6{
+    color: #333333;
+    font-size: 0.9vw;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.row img{
+    margin-right: 8%;
+}
+.row svg{
+    height: 10vw;
+}
+.row path, polyline{
+    stroke: #14cf93 !important;
+}
+#cards{
+    width: 100%;
+    height: 80vh;
+    background-color: #FCFAF8;
+    display: flex;
+}
+#left-text{
+    width: 40%;
+    height: 100%;
+    padding: 120px 70px;
+}
+#left-text h3{
+    font-family: gilroyMedium;
+    font-weight: 400;
+    font-size: 2.6vw;
+    opacity: 0.8;
+}
+#right-card{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-left: 12%;
+    padding-bottom: 15%;
+}
+#right-card .card{
+    width: 26vw;
+    height: 35vw;
+    border: transparent;
+    border-radius: 20px;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(10);
+    transition: ease-in-out 0.5s;
+    z-index: 3;
+}
+#right-card .card:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+}
+#right-card #card1{
+    transform:translateX(-50%) translateY(-10%) rotate(-12deg);
+}
+#right-card #card2{
+    transform:translateX(-25%) translateY(10%) rotate(-6deg);
+}
+#right-card #card3{
+    transform: translateY(28%) translateX(5%);
+}
+#service-section{
+  width: 100%;
+  height: 100vh;
+  background-color: #F2F2F2;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#service-section::before{
+  content: "";
+  width: 100%;
+  height: 150px;
+  left: 0;
+  position: absolute;
+  background-image:url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+  background-size: cover;
+  top: 0;
+  transform: rotate(-180deg) translateY(55%);
+}
+#service-content{
+  width: 100%;
+  height: 70%;
+  padding: 80px 60px;
+  font-family: gilroyMedium;
+}
+
+#service-content p i{
+  font-size: 6vw;
+  font-family: Mazius;
+  opacity: 0.6;
+  color: #000000be;
+}
+#txt{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.632);
+  padding-bottom: 10%;
+}
+#txt h6{
+  opacity: 0.75;
+  padding-bottom: 3%;
+}
+#txt h3{
+  width: 22%;
+  font-weight: 400;
+  opacity: 0.8;
+}
+#work{
+  width: 100%;
+  background-color: #F2F2F2;
+  min-height: 100vh;
+  padding: 80px 60px;
+  position: relative;
+}
+#work::after{
+  content: "";
+  width: 100%;
+  height: 150px;
+  left: 0;
+  position: absolute;
+  background-image:url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+  background-size: cover;
+  bottom: 0%;
+  transform: rotate(0deg) translateY(55%);
+  z-index: 1;
+}
+#work #row{
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#row h1{
+  font-family: gilroyMedium;
+  font-weight: 300;
+  font-size: 9vw;
+  margin-left: 14%;
+  letter-spacing: -3px;
+  color: #000000c3;
+}
+#row h1::after{
+  content: "(05)";
+  font-size: 1.8vw;
+  padding-left: 30px;
+
+}
+#row svg{
+  transform: rotate(90deg);
+}
+#image-row{
+  width: 100%;
+  display: flex;
+  justify-content: baseline;
+  flex-wrap: wrap;
+  gap: 3vw;
+  overflow: hidden;
+}
+.ctn1{
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 8%;
+  cursor: pointer;
+  position: relative;
+}
+.ctn1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.ctn2{
+  width: 30%;
+  height: 60vh;
+  overflow: hidden;
+  align-self: end;
+  border-radius: 8%;
+  cursor: pointer;
+  position: relative;
+}
+.ctn2 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ctn3{
+  width: 93%;
+  height: 80vh;
+  overflow: hidden;
+  margin-top: 5%;
+  border-radius: 4vw;
+  cursor: pointer;
+  position: relative;
+}
+.ctn3 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.btns{
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  z-index: 99;
+}
+#acheivments{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 80px 60px;
+}
+#head-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vw;
+  margin: 8vw 0;
+}
+#head-row h1{
+  font-family: gilroyMedium;
+  font-weight: 300;
+  font-size: 10vw;
+}
+#head-row svg{
+  transform: rotate(90deg);
+  width: 15vw;
+}
+#reward{
+  width: 100%;
+  display: flex;
+}
+#rewards .reward-elem{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw 1vw;
+  border-bottom: 0.5px solid black;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.reward-elem h1{
+  font-family: gilroyMedium;
+}
+.reward-elem p{
+  font-family: gilroyMedium;
+}
+.reward-elem h3 i{
+  font-size: 2vw;
+  padding: 0.7vw 0.79vw;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+
+}
+.reward-elem:hover h3 {
+  transform: rotate(-40deg);
+  transition: all 0.2s ease-in;
+}
+#footer{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #253B39;
+  color: #fff;
+  padding: 100px 80px;
+}
+#row1{
+  width: 100%;
+  display: flex;
+  gap: 12vw;
+  text-align: center;
+  margin-bottom: 10%;
+}
+#row1 h1{
+  font-family: gilroyMedium;
+  font-weight: 400;
+  font-size: 7vw;
+  line-height: 6.5vw;
+}
+#row1 svg{
+  align-self: flex-end;
+}
+#row1 #arrow-white path, polyline {
+  stroke: #fff;
+}
+#row2{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#row2 button{
+  background-color: transparent;
+  color: #fff;
+  border: 0.5px solid #fff;
+  font-family: gilroymedium;
+  padding: 4vw 13vw;
+  border-radius: 50vw;
+  font-size: 2vw;
+}
+#row2 button:hover{
+  background-color: #fff;
+  border: transparent;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+#row3{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10%;
+}
+#row3 .social-elem{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 1.3vw 0;
+  line-height: 1.5vw;
+  font-family: gilroyMedium;
+  border-top: 0.5px solid #fff;
+  cursor: pointer;
+}
+.social-elem h2{
+  font-weight: 100;
+}
+.social-elem i{
+  font-size: 2vw;
+  font-weight: 100;
+}
+#row3 .social-elem:hover{
+  padding: 1.3vw 1vw;
+  background-color: #14CF93;
+  transition: all ease-in-out 0.3s;
+}
+#row4{
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
+#row4 h3{
+  font-family: gilroyMedium;
+  font-weight: 400;
+}
+#row4 h3 a{
+  color: #fff;
+  margin-left: 1%;
+}
